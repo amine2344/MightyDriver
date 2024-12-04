@@ -14,7 +14,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutterwave_standard/flutterwave.dart';
 import 'package:flutterwave_standard/view/view_utils.dart';
 import 'package:http/http.dart' as http;
-import 'package:my_fatoorah/my_fatoorah.dart';
+//import 'package:my_fatoorah/my_fatoorah.dart';
 //import 'package:paytm/paytm.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:taxi_driver/utils/Extensions/StringExtensions.dart';
@@ -488,7 +488,7 @@ class PaymentScreenState extends State<PaymentScreen> {
 
   /// My Fatoorah Payment
   Future<void> myFatoorahPayment() async {
-    PaymentResponse response = await MyFatoorah.startPayment(
+    /*  PaymentResponse response = await MyFatoorah.startPayment(
       context: context,
       successChild: Center(
         child: Column(
@@ -531,7 +531,7 @@ class PaymentScreenState extends State<PaymentScreen> {
       paymentConfirm();
     } else if (response.isError) {
       toast(language.paymentFailed);
-    }
+    } */
   }
 
   /// PayTm Payment
