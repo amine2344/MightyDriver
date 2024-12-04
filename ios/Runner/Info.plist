@@ -19,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string> <!-- Updated version number -->
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>2</string> <!-- Updated build version -->
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -49,13 +49,13 @@
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Looking for local tcp Bonjour service</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Mighty Driver  App uses your location to pick origins, destinations, and predict ride times</string>
+	<string>Mighty Driver App uses your location to pick origins, destinations, and predict ride times</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Mighty Driver requires address permission access to get the current location of the user.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Mighty Driver  requires address permission access to get the current location of the user.</string>
+	<string>Mighty Driver requires address permission access to get the current location of the user.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Mighty Driver  app requires access to microphone when you will be used to record your speech at time of  press the &quot;Mic&quot; button.</string>
+	<string>Mighty Driver app requires access to the microphone to record your speech when pressing the &quot;Mic&quot; button.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Mighty Driver requires access to the photo library to upload your profile photo.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
