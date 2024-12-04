@@ -127,11 +127,20 @@ class SplashScreenState extends State<SplashScreen> {
   }
 
   void _checkNotifyPermission() async {
-    if (await Permission.notification.isGranted) {
+    final status = await Permission.notification.request();
+    if (status.isGranted) {
+      print('Notification permission granted');
+      init();
+    } else {
+      print('Notification permission denied');
+      await Permission.notification.request();
+      init();
+    }
+    /*  if (await Permission.notification.isGranted) {
       init();
     } else {
       await Permission.notification.request();
       init();
-    }
+    } */
   }
 }

@@ -57,9 +57,9 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.mighty.taxidriver"
+        applicationId "com.mightytaxidriver.app"
         minSdkVersion 23
-        targetSdkVersion 34
+        targetSdkVersion 30
         versionCode 19
         versionName '3.0.0'
         multiDexEnabled true
@@ -86,7 +86,7 @@ android {
         }
     }
     buildToolsVersion '30.0.3'
-    namespace "com.mighty.taxidriver"
+    namespace "com.mightytaxidriver.app"
     
     
 

@@ -1137,18 +1137,20 @@ class DashboardScreenState extends State<DashboardScreen> {
                 1 == 1 */
                 true)
               GoogleMap(
-                mapToolbarEnabled: false,
-                zoomControlsEnabled: false,
+                //mapToolbarEnabled: true,
+                zoomControlsEnabled: true,
+                myLocationButtonEnabled: true,
+                compassEnabled: true,
+                myLocationEnabled: true,
 
-                compassEnabled: false,
                 padding: EdgeInsets.only(top: context.statusBarHeight + 4 + 24),
                 // padding: const EdgeInsets.only(top: 70),
                 onMapCreated: onMapCreated,
                 initialCameraPosition: CameraPosition(
                   target: driverLocation ??
-                      LatLng(sharedPref.getDouble(LATITUDE) ?? 0,
-                          sharedPref.getDouble(LONGITUDE) ?? 0),
-                  zoom: 17.0,
+                      LatLng(sharedPref.getDouble(LATITUDE) ?? 28.0289837,
+                          sharedPref.getDouble(LONGITUDE) ?? 1.6666663),
+                  zoom: 12.0,
                 ),
                 markers: markers,
                 mapType: normalMode ? MapType.normal : MapType.satellite,

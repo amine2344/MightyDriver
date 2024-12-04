@@ -59,9 +59,7 @@ class SignInScreenState extends State<SignInScreen> {
   void init() async {
     appSetting();
     if (sharedPref.getString(PLAYER_ID).validate().isEmpty) {
-      await saveOneSignalPlayerId().then((value) {
-        //
-      });
+      await saveOneSignalPlayerId().then((value) {});
     }
     mIsCheck = sharedPref.getBool(REMEMBER_ME) ?? false;
     if (mIsCheck) {
@@ -76,7 +74,6 @@ class SignInScreenState extends State<SignInScreen> {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
 
-      // Indicate loading
       setState(() {
         appStore.setLoading(true);
       });
@@ -95,19 +92,16 @@ class SignInScreenState extends State<SignInScreen> {
       }
 
       try {
-        // Perform login API request
         var loginResponse = await logInApi(req);
 
         setState(() {
           _userModel = loginResponse.data!;
         });
 
-        // Perform Firebase login
         await _auth
             .signInWithEmailAndPassword(
                 email: emailController.text, password: passController.text)
             .then((authResult) async {
-          // Update shared preferences
           await sharedPref.setString(UID, authResult.user!.uid);
           updateProfileUid();
 
@@ -138,7 +132,6 @@ class SignInScreenState extends State<SignInScreen> {
             appStore.isLoading = false;
           });
 
-          // Handle specific Firebase errors
           if (authError.toString().contains('user-not-found')) {
             authService.signUpWithEmailPassword(
               context,
@@ -155,7 +148,6 @@ class SignInScreenState extends State<SignInScreen> {
           }
         });
       } catch (loginError) {
-        // Handle login API errors
         setState(() {
           appStore.setLoading(false);
         });
@@ -217,7 +209,6 @@ class SignInScreenState extends State<SignInScreen> {
             statusBarIconBrightness: Brightness.light,
             statusBarBrightness: Brightness.dark),
       ),
-      // appBar: AppBar(),
       body: Stack(
         children: [
           Form(
