@@ -11,8 +11,8 @@ import 'package:flutter_paytabs_bridge/PaymentSdkApms.dart';
 import 'package:flutter_paytabs_bridge/PaymentSdkConfigurationDetails.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:flutterwave_standard/flutterwave.dart';
-import 'package:flutterwave_standard/view/view_utils.dart';
+//import 'package:flutterwave_standard/flutterwave.dart';
+//import 'package:flutterwave_standard/view/view_utils.dart';
 import 'package:http/http.dart' as http;
 //import 'package:my_fatoorah/my_fatoorah.dart';
 //import 'package:paytm/paytm.dart';
@@ -362,7 +362,7 @@ class PaymentScreenState extends State<PaymentScreen> {
 
   /// FlutterWave Payment
   void flutterWaveCheckout() async {
-    final customer = Customer(
+    /*  final customer = Customer(
         name: sharedPref.getString(USER_NAME).validate(),
         phoneNumber: sharedPref.getString(CONTACT_NUMBER).validate(),
         email: sharedPref.getString(USER_EMAIL).validate());
@@ -387,7 +387,7 @@ class PaymentScreenState extends State<PaymentScreen> {
     } else {
       toast(language.transactionFailed);
       // FlutterwaveViewUtils.showToast(context, language.transactionFailed);
-    }
+    } */
   }
 
   /// PayTabs Payment
