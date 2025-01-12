@@ -50,24 +50,22 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB-pUtWq3NApzhtnC4rdZSrBANqXv5NwF4',
-    appId: '1:768693070991:android:62b9af3fae938a86a314fa',
-    messagingSenderId: '768693070991',
-    projectId: 'saheli-43a79',
-    databaseURL: 'https://saheli-43a79-default-rtdb.firebaseio.com',
-    storageBucket: 'saheli-43a79.appspot.com',
+    apiKey: 'AIzaSyCcM7fuLUoNAQkpeSDUkJn1U-4yorxmyt0',
+    appId: '1:1074134422433:android:0c297a91fa0520519ef1e0',
+    messagingSenderId: '1074134422433',
+    projectId: 'delivery-20857',
+    storageBucket: 'delivery-20857.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC-289nDyrNOe8sZUXOkJvwdgaTs78iSTg',
-    appId: '1:768693070991:ios:ed9c46a278616e81a314fa',
-    messagingSenderId: '768693070991',
-    projectId: 'saheli-43a79',
-    databaseURL: 'https://saheli-43a79-default-rtdb.firebaseio.com',
-    storageBucket: 'saheli-43a79.appspot.com',
-    androidClientId: '768693070991-0mibbl0vgs1470qjlrhe2d5ic8nh9o4t.apps.googleusercontent.com',
-    iosClientId: '768693070991-mnp06nkkmk6tc1770a81qspjsddtg4fp.apps.googleusercontent.com',
-    iosBundleId: 'com.mighty.taxidriver2',
+    apiKey: 'AIzaSyBerDT9HGBXu88DaG3s0E3LtVGwAsjC0JU',
+    appId: '1:1074134422433:ios:3a9c8b99ff7f04159ef1e0',
+    messagingSenderId: '1074134422433',
+    projectId: 'delivery-20857',
+    storageBucket: 'delivery-20857.appspot.com',
+    androidClientId: '1074134422433-0ghki6lc5ehg5etc9vbvp3pcjoimo7at.apps.googleusercontent.com',
+    iosClientId: '1074134422433-mmrtbkcnpvhi21ldpv2dmjbjma1ub8uv.apps.googleusercontent.com',
+    iosBundleId: 'com.mightytaxirider.app',
   );
 
 }

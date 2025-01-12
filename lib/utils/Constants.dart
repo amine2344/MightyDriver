@@ -12,7 +12,7 @@ const DOMAIN_URL =
 
 //region Google map key
 
-const GOOGLE_MAP_API_KEY = 'AIzaSyB-pUtWq3NApzhtnC4rdZSrBANqXv5NwF4';
+const GOOGLE_MAP_API_KEY = 'AIzaSyCcM7fuLUoNAQkpeSDUkJn1U-4yorxmyt0';
 //endregion
 
 //region Currency & country code

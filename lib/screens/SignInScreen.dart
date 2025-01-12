@@ -93,21 +93,25 @@ class SignInScreenState extends State<SignInScreen> {
 
       try {
         var loginResponse = await logInApi(req);
+        log('API Login Success: $loginResponse');
 
         setState(() {
           _userModel = loginResponse.data!;
         });
 
-        await _auth
-            .signInWithEmailAndPassword(
-                email: emailController.text, password: passController.text)
-            .then((authResult) async {
+        String email = emailController.text;
+        String password = passController.text;
+
+        // Firebase Authentication
+        try {
+          log('Email: ${emailController.text}');
+          log('Password: ${passController.text}');
+
+          var authResult = await _auth.signInWithEmailAndPassword(
+              email: email, password: password);
+          log('Firebase Login Success: ${authResult.user!.uid}');
           await sharedPref.setString(UID, authResult.user!.uid);
           updateProfileUid();
-
-          setState(() {
-            appStore.isLoading = false;
-          });
 
           if (sharedPref.getInt(IS_Verified_Driver) == 1) {
             await checkPermission();
@@ -116,44 +120,28 @@ class SignInScreenState extends State<SignInScreen> {
               sharedPref.setDouble(LATITUDE, pos.latitude);
               sharedPref.setDouble(LONGITUDE, pos.longitude);
             });
-
             setState(() {
               appStore.isLoading = false;
             });
-
             launchScreen(context, DashboardScreen(),
                 isNewTask: true, pageRouteAnimation: PageRouteAnimation.Slide);
           } else {
             launchScreen(context, DocumentsScreen(isShow: true),
                 isNewTask: true, pageRouteAnimation: PageRouteAnimation.Slide);
           }
-        }).catchError((authError) {
+        } catch (authError) {
+          log('Firebase Auth Error: $authError');
+          toast('Authentication failed. Please check your credentials.');
           setState(() {
             appStore.isLoading = false;
           });
-
-          if (authError.toString().contains('user-not-found')) {
-            authService.signUpWithEmailPassword(
-              context,
-              mobileNumber: _userModel.contactNumber,
-              email: emailController.text,
-              fName: _userModel.firstName,
-              lName: _userModel.lastName,
-              userName: _userModel.username,
-              password: passController.text,
-              userType: DRIVER,
-            );
-          } else {
-            log('Auth Error: $authError');
-          }
-        });
+        }
       } catch (loginError) {
+        log('API Login Error: $loginError');
+        toast(loginError.toString());
         setState(() {
           appStore.setLoading(false);
         });
-
-        log('Login API Error: $loginError');
-        toast(loginError.toString());
       }
     }
   }
@@ -255,7 +243,7 @@ class SignInScreenState extends State<SignInScreen> {
                     decoration:
                         inputDecoration(context, label: language.password),
                   ),
-                  SizedBox(height: 16),
+                  /*   SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -310,7 +298,7 @@ class SignInScreenState extends State<SignInScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 16),
+                 */ /*  SizedBox(height: 16),
                   Row(
                     children: [
                       SizedBox(
@@ -388,6 +376,7 @@ class SignInScreenState extends State<SignInScreen> {
                       )
                     ],
                   ),
+                  */
                   SizedBox(height: 32),
                   AppButtonWidget(
                     width: MediaQuery.of(context).size.width,
@@ -397,8 +386,8 @@ class SignInScreenState extends State<SignInScreen> {
                     },
                   ),
                   SizedBox(height: 16),
-                  socialWidget(),
-                  SizedBox(height: 16),
+                  /* socialWidget(),
+                  SizedBox(height: 16), */
                 ],
               ),
             ),

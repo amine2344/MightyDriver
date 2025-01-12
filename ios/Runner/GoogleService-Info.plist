@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>768693070991-mnp06nkkmk6tc1770a81qspjsddtg4fp.apps.googleusercontent.com</string>
+	<string>1074134422433-mmrtbkcnpvhi21ldpv2dmjbjma1ub8uv.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.768693070991-mnp06nkkmk6tc1770a81qspjsddtg4fp</string>
+	<string>com.googleusercontent.apps.1074134422433-mmrtbkcnpvhi21ldpv2dmjbjma1ub8uv</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>768693070991-0mibbl0vgs1470qjlrhe2d5ic8nh9o4t.apps.googleusercontent.com</string>
+	<string>1074134422433-0ghki6lc5ehg5etc9vbvp3pcjoimo7at.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC-289nDyrNOe8sZUXOkJvwdgaTs78iSTg</string>
+	<string>AIzaSyBerDT9HGBXu88DaG3s0E3LtVGwAsjC0JU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>768693070991</string>
+	<string>1074134422433</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mighty.taxidriver2</string>
+	<string>com.mightytaxirider.app</string>
 	<key>PROJECT_ID</key>
-	<string>saheli-43a79</string>
+	<string>delivery-20857</string>
 	<key>STORAGE_BUCKET</key>
-	<string>saheli-43a79.appspot.com</string>
+	<string>delivery-20857.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,8 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:768693070991:ios:ed9c46a278616e81a314fa</string>
-	<key>DATABASE_URL</key>
-	<string>https://saheli-43a79-default-rtdb.firebaseio.com</string>
+	<string>1:1074134422433:ios:3a9c8b99ff7f04159ef1e0</string>
 </dict>
 </plist>

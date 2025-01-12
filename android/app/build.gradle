@@ -55,9 +55,9 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
-
+//com.mightytaxirider.app
     defaultConfig {
-        applicationId "com.mightytaxidriver.app"
+        applicationId "com.mightytaxirider.app"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 19
@@ -86,7 +86,7 @@ android {
         }
     }
     buildToolsVersion '30.0.3'
-    namespace "com.mightytaxidriver.app"
+    namespace "com.mightytaxirider.app"
     
     
 

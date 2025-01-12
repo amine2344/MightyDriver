@@ -110,69 +110,70 @@ class SignUpScreenState extends State<SignUpScreen> {
     hideKeyboard(context);
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
-      if (isAcceptedTc) {
-        appStore.setLoading(true);
-        Map req = {
-          'first_name': firstController.text.trim(),
-          'last_name': lastNameController.text.trim(),
-          'username': widget.socialLogin
-              ? widget.userName
-              : userNameController.text.trim(),
-          'email': emailController.text.trim(),
-          "user_type": "driver",
-          // "latitude": "$l1",
-          // "longitude": "$l2",
-          "contact_number": widget.socialLogin
-              ? '${widget.userName}'
-              : '${phoneController.text.trim()}',
-          "country_code":
-              widget.socialLogin ? '${widget.countryCode}' : '$countryCode',
-          'password':
-              widget.socialLogin ? widget.userName : passController.text.trim(),
-          "player_id": sharedPref.getString(PLAYER_ID).validate(),
-          if (widget.socialLogin) 'login_type': LoginTypeOTP,
-          "user_detail": {
-            'car_model': carModelController.text.trim(),
-            'car_color': carColorController.text.trim(),
-            'car_plate_number': carPlateController.text.trim(),
-            'car_production_year': carProductionController.text.trim(),
-          },
-          'service_id': "", //listServices[selectedService].id,
-        };
-
-        await signUpApi(req).then((value) {
-          authService
-              .signUpWithEmailPassword(context,
-                  mobileNumber: widget.socialLogin
-                      ? '${widget.countryCode}${widget.userName}'
-                      : '$countryCode${phoneController.text.trim()}',
-                  email: emailController.text.trim(),
-                  fName: firstController.text.trim(),
-                  lName: lastNameController.text.trim(),
-                  userName: widget.socialLogin
-                      ? widget.userName
-                      : userNameController.text.trim(),
-                  password: widget.socialLogin
-                      ? widget.userName
-                      : passController.text.trim(),
-                  userType: DRIVER,
-                  isOtpLogin: widget.socialLogin)
-              .then((res) async {
-            //
-          }).catchError((e) {
-            appStore.setLoading(false);
-            toast('$e');
-          });
-        }).catchError((error, stack) {
-          appStore.setLoading(false);
-          /*   FirebaseCrashlytics.instance.recordError(
-              "sign_up_stuck_issue::" + error.toString(), stack,
-              fatal: true); */
-          toast('${error}');
-        });
+      /* if (isAcceptedTc) {
+        
       } else {
         toast(language.pleaseAcceptTermsOfServicePrivacyPolicy);
-      }
+      } */
+      appStore.setLoading(true);
+      Map req = {
+        'first_name': firstController.text.trim(),
+        'last_name': lastNameController.text.trim(),
+        'username': widget.socialLogin
+            ? widget.userName
+            : userNameController.text.trim(),
+        'email': emailController.text.trim(),
+        "user_type": "driver",
+        // "latitude": "$l1",
+        // "longitude": "$l2",
+        "contact_number": widget.socialLogin
+            ? '${widget.userName}'
+            : '${phoneController.text.trim()}',
+        "country_code":
+            widget.socialLogin ? '${widget.countryCode}' : '$countryCode',
+        'password':
+            widget.socialLogin ? widget.userName : passController.text.trim(),
+        "player_id": sharedPref.getString(PLAYER_ID).validate(),
+        if (widget.socialLogin) 'login_type': LoginTypeOTP,
+        "user_detail": {
+          'car_model': carModelController.text.trim(),
+          'car_color': carColorController.text.trim(),
+          'car_plate_number': carPlateController.text.trim(),
+          'car_production_year': carProductionController.text.trim(),
+        },
+        'service_id': "", //listServices[selectedService].id,
+      };
+
+      await signUpApi(req).then((value) {
+        authService
+            .signUpWithEmailPassword(context,
+                mobileNumber: widget.socialLogin
+                    ? '${widget.countryCode}${widget.userName}'
+                    : '$countryCode${phoneController.text.trim()}',
+                email: emailController.text.trim(),
+                fName: firstController.text.trim(),
+                lName: lastNameController.text.trim(),
+                userName: widget.socialLogin
+                    ? widget.userName
+                    : userNameController.text.trim(),
+                password: widget.socialLogin
+                    ? widget.userName
+                    : passController.text.trim(),
+                userType: DRIVER,
+                isOtpLogin: widget.socialLogin)
+            .then((res) async {
+          //
+        }).catchError((e) {
+          appStore.setLoading(false);
+          toast('$e');
+        });
+      }).catchError((error, stack) {
+        appStore.setLoading(false);
+        /*   FirebaseCrashlytics.instance.recordError(
+              "sign_up_stuck_issue::" + error.toString(), stack,
+              fatal: true); */
+        toast('${error}');
+      });
     }
   }
 
@@ -516,7 +517,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                               decoration: inputDecoration(context,
                                   label: language.carColor)),
                           SizedBox(height: 8),
-                          CheckboxListTile(
+                          /* CheckboxListTile(
                             contentPadding: EdgeInsets.zero,
                             controlAffinity: ListTileControlAffinity.leading,
                             activeColor: primaryColor,
@@ -579,6 +580,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                               setState(() {});
                             },
                           ),
+                         */
                         ],
                       ),
                     ),
