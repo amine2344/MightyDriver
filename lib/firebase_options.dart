@@ -51,21 +51,21 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCcM7fuLUoNAQkpeSDUkJn1U-4yorxmyt0',
-    appId: '1:1074134422433:android:0c297a91fa0520519ef1e0',
+    appId: '1:1074134422433:android:12ef25acae0f0c769ef1e0',
     messagingSenderId: '1074134422433',
     projectId: 'delivery-20857',
     storageBucket: 'delivery-20857.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBerDT9HGBXu88DaG3s0E3LtVGwAsjC0JU',
-    appId: '1:1074134422433:ios:3a9c8b99ff7f04159ef1e0',
+    apiKey: 'AIzaSyCpai_kx19Er2mwW0ew1ttCUNtIs_Z27PY',
+    appId: '1:1074134422433:ios:72c7ae564b2e1c759ef1e0',
     messagingSenderId: '1074134422433',
     projectId: 'delivery-20857',
     storageBucket: 'delivery-20857.appspot.com',
     androidClientId: '1074134422433-0ghki6lc5ehg5etc9vbvp3pcjoimo7at.apps.googleusercontent.com',
-    iosClientId: '1074134422433-mmrtbkcnpvhi21ldpv2dmjbjma1ub8uv.apps.googleusercontent.com',
-    iosBundleId: 'com.mightytaxirider.app',
+    iosClientId: '1074134422433-j5uk53153bforqt9qrmdgmlvp22hg0cq.apps.googleusercontent.com',
+    iosBundleId: 'com.mightytaxidriver.app',
   );
 
 }

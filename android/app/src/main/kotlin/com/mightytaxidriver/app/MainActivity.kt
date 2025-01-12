@@ -1,4 +1,4 @@
-package com.mightytaxirider.app
+package com.mightytaxidriver.app
 
 import io.flutter.embedding.android.FlutterActivity
 
